@@ -47,4 +47,5 @@ export class Comment {
   set user(value: User) {
     this._user = value;
   }
+  
 }

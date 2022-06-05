@@ -40,4 +40,5 @@ export class Tweet {
   set date(value: Date) {
     this._date = value;
   }
+  
 }

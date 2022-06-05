@@ -12,6 +12,7 @@ import { CommentService } from 'src/app/services/comment.service';
 })
 export class CommentsComponent implements OnInit {
   @Input() _tweetId: number = -1;
+<<<<<<< HEAD
 
   comments: Comment[] = [];
 
@@ -22,12 +23,25 @@ export class CommentsComponent implements OnInit {
 
   ngOnInit(): void {
     this.comments = this.commentService.getAllByTweetId(this._tweetId);
+=======
+  comments: Comment[] = [];
+  commentText: any;
+
+  constructor(private commentService: CommentService, private  authService: AuthService) { }
+
+  ngOnInit(): void {
+    this.comments = this.commentService.getAllByTweetId(this._tweetId)
+>>>>>>> cc5d67e146781ccb148405f3f300e15ce90e8c6e
   }
 
   onSubmit(): void {
     let user: User = this.authService.getUser();
-    let comment: Comment = new Comment(this.commentText, new Tweet("", "",this._tweetId), user);
-    this.commentService.save(comment) //;
+    let comment: Comment = new Comment(
+      this.commentText, 
+      new Tweet("", "",this._tweetId), 
+      user
+    );
+    this.commentService.save(comment);
     this.comments = this.commentService.getAllByTweetId(this._tweetId);
     console.log(this.comments);
 
