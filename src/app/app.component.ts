@@ -11,14 +11,4 @@ export class AppComponent {
   color:string = '';
 
   constructor() { }
-
-  // addTweet(tweet: Tweet) {
-  //   this.tweets.unshift(tweet);
-  // }
-
-  // onDelete(id: number) {
-  //   console.log(this.tweets);
-  //   this.tweets.splice(id, 1);
-  // }
-
 }
