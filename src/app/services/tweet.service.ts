@@ -20,7 +20,7 @@ export class TweetService {
   }
 
   save(tweet: Tweet) {
-    this.tweets.push(tweet);
+    this.tweets.unshift(tweet);
   }
 
   delete(id: number) {
