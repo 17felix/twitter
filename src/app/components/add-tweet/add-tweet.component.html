@@ -1,11 +1,11 @@
 <form (ngSubmit)="onSubmit()">
   <div>
-    <label for="title">Title: </label>
-    <input type="text" [(ngModel)]="title" id="title" name="title"/>
+    <label for="title">Title</label>
+    <input type="text" [(ngModel)]="title" id="title" name="title" placeholder="Title"/>
   </div>
   <div>
-    <label for="text">Text: </label>
-    <input type="text" [(ngModel)]="text" id="text" name="text"/>
+    <label for="text">Text</label>
+    <input type="text" [(ngModel)]="text" id="text" name="text" placeholder="Text"/>
   </div>
   <button type="submit">Submit</button>
 </form>

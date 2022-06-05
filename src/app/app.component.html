@@ -1,2 +1,10 @@
-<app-add-tweet (newPostEvent)="addPost($event)"></app-add-tweet>
-<app-tweets [tweets]="tweets" (onDelete)="onDelete($event)"></app-tweets>
+<div class="container">
+  <p appColorOpacity color="green" opacity=0.5>opacity test</p>
+</div>
+
+<div class="container">
+  <app-add-tweet (newPostEvent)="addTweet($event)"></app-add-tweet>
+  <app-tweets [tweets]="tweets" (onDelete)="onDelete($event)"></app-tweets>
+</div>
+
+<p>what is view container? Usecase?</p>
