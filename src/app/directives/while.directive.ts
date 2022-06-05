@@ -12,7 +12,7 @@ export class WhileDirective {
 
   constructor(private templateRef: TemplateRef<WhileContext>, private viewContainer: ViewContainerRef) { }
 
-  @Input('while') set appWhile(array: any[]) {
+  @Input('appWhile') set appWhile(array: any[]) {
     this.viewContainer.clear();
     array.forEach((value, index, array) => {
       this.viewContainer.createEmbeddedView(this.templateRef, {
