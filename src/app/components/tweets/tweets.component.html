@@ -1,5 +1,5 @@
 <ul class="list">
-  <li class="list-item" *ngFor="let tweet of tweets; let i = index">
+  <li class="list-item" *appWhile="tweets; let tweet; let i = index">
     <h3>{{ tweet.title }}</h3>
     <p>{{ tweet.text }}</p>
     <p>{{ tweet.date }}</p>

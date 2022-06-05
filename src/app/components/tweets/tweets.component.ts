@@ -16,8 +16,8 @@ export class TweetsComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  onDeleteClick(index: number) {
-    this.onDelete.emit(index);
+  onDeleteClick(id: number) {
+    this.onDelete.emit(id);
   }
 
 }

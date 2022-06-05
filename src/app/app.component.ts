@@ -7,25 +7,26 @@ import { Tweet } from './Tweet';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'twitter';
+  title:string = 'twitter';
+  color:string = '';
   tweets: Tweet[];
 
   constructor() {
     this.tweets = [
-      new Tweet("name", "text"),
-      new Tweet("name", "text1"),
-      new Tweet("name", "text2"),
-      new Tweet("name", "text3"),
+      new Tweet("Breacking news", "lorem ipsum camia var dalores"),
+      new Tweet("Boba Biba Bom", "lorem ipsum camia var dalores"),
+      new Tweet("$ E Uan", "lorem ipsum camia var dalores"),
+      new Tweet("Angular crash", "lorem ipsum camia var dalores"),
     ];
   }
 
-  addPost(tweet: Tweet) {
+  addTweet(tweet: Tweet) {
     this.tweets.push(tweet);
   }
 
-  onDelete(index: number) {
+  onDelete(id: number) {
     console.log(this.tweets);
-    this.tweets.splice(index, 1);
+    this.tweets.splice(id, 1);
   }
 
 }
