@@ -1,4 +1,4 @@
-<ul class="list">
+<ul class="list" *appTrackBy="tweets">
   <li class="list-item" *appWhile="tweets; let tweet; let i = index">
     <h3>{{ tweet.title }}</h3>
     <p>{{ tweet.text }}</p>

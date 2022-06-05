@@ -21,7 +21,7 @@ export class AppComponent {
   }
 
   addTweet(tweet: Tweet) {
-    this.tweets.push(tweet);
+    this.tweets.unshift(tweet);
   }
 
   onDelete(id: number) {
