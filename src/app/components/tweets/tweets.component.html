@@ -6,6 +6,7 @@
     <p>{{ tweet.text }}</p>
     <p>{{ tweet.date }}</p>
     <button class="btn" (click)="onDeleteClick(tweet.id)">Delete</button>
+    <app-comments></app-comments>
     <hr>
   </li>
 </ul>

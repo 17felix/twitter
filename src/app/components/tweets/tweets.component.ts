@@ -1,5 +1,6 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
-import { Tweet } from 'src/app/Tweet';
+import { Tweet } from 'src/app/models/Tweet';
+import { TweetService } from 'src/app/services/tweet.service';
 
 @Component({
   selector: 'app-tweets',
@@ -9,15 +10,15 @@ import { Tweet } from 'src/app/Tweet';
 export class TweetsComponent implements OnInit {
 
   @Input() tweets: Tweet[] = [];
-  @Output() onDelete = new EventEmitter<number>();
 
-  constructor() { }
+  constructor(private tweetService: TweetService) { }
 
   ngOnInit(): void {
+    this.tweets = this.tweetService.getAll();
   }
 
   onDeleteClick(id: number) {
-    this.onDelete.emit(id);
+    this.tweetService.delete(id);
   }
 
 }
