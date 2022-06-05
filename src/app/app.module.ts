@@ -9,6 +9,8 @@ import { FormsModule } from '@angular/forms';
 import { ColorOpacityDirective } from './directives/color-opacity.directive';
 import { WhileDirective } from './directives/while.directive';
 import { TrackByDirective } from './directives/track-by.directive';
+import { CommentsComponent } from './components/comments/comments.component';
+import { TweetsModule } from './modules/tweets/tweets.module';
 
 @NgModule({
   declarations: [
@@ -17,12 +19,14 @@ import { TrackByDirective } from './directives/track-by.directive';
     AddTweetComponent,
     ColorOpacityDirective,
     WhileDirective,
-    TrackByDirective
+    TrackByDirective,
+    CommentsComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    TweetsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

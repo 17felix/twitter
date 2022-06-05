@@ -1,5 +1,6 @@
 import { Component, EventEmitter, OnInit, Output } from '@angular/core';
-import { Tweet } from 'src/app/Tweet';
+import { Tweet } from 'src/app/models/Tweet';
+import { TweetService } from 'src/app/services/tweet.service';
 
 @Component({
   selector: 'app-add-tweet',
@@ -11,15 +12,13 @@ export class AddTweetComponent implements OnInit {
   title!: string;
   text!: string;
 
-  @Output() newPostEvent = new EventEmitter<Tweet>();
-
-  constructor() { }
+  constructor(private tweetService: TweetService) { }
 
   ngOnInit(): void {
   }
 
   onSubmit(): void {
-    this.newPostEvent.emit(new Tweet(this.title, this.text));
+    this.tweetService.save(new Tweet(this.title, this.text));
     this.title = "";
     this.text = "";
   }

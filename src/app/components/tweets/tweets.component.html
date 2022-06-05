@@ -1,9 +1,12 @@
-<ul class="list" *appTrackBy="tweets">
-  <li class="list-item" *appWhile="tweets; let tweet; let i = index">
+<!-- <ul class="list" *appTrackBy="tweets">
+  <li class="list-item" *appWhile="tweets; let tweet; let i = index"> -->
+<ul class="list">
+  <li class="list-item" *ngFor="let tweet of tweets">
     <h3>{{ tweet.title }}</h3>
     <p>{{ tweet.text }}</p>
     <p>{{ tweet.date }}</p>
-    <button class="btn" (click)="onDeleteClick(i)">Delete</button>
+    <button class="btn" (click)="onDeleteClick(tweet.id)">Delete</button>
+    <app-comments></app-comments>
     <hr>
   </li>
 </ul>
