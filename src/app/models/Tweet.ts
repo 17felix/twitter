@@ -1,12 +1,12 @@
 export class Tweet {
-  private _id: number = 0;
+  private readonly _id: number;
   private _title: String;
   private _text: String;
   private _date: Date;
 
 
-  constructor(title: String, text: String) {
-    this._id =+ 1;
+  constructor(title: String, text: String, id?: number) {
+    this._id = id ?? Date.now();
     this._title = title;
     this._text = text;
     this._date = new Date();
@@ -15,10 +15,6 @@ export class Tweet {
 
   get id(): number {
     return this._id;
-  }
-
-  set id(value: number) {
-    this._id = value;
   }
 
   get title(): String {
